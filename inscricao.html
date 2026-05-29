@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscrição — Operação Aracnídeo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">OP. <span>ARACNÍDEO</span></div>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="conteudo.html">Arquivos</a></li>
+      <li><a href="inscricao.html" class="active">Inscrição</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="breadcrumb"><a href="index.html">Início</a> / Inscrição</p>
+    <h1>Junte-se à<br><span>Operação</span></h1>
+    <p>
+      Preencha o formulário de cadastro abaixo para ingressar na Operação Aracnídeo.
+      Todos os dados são mantidos em sigilo e utilizados exclusivamente para coordenar as investigações do fan clube.
+    </p>
+  </div>
+
+  <main>
+
+    <div class="clearance-box">
+      <div class="clearance-icon">⚠</div>
+      <p>
+        <strong>AVISO DE SEGURANÇA:</strong> As informações fornecidas neste formulário são confidenciais e protegidas pelo protocolo interno da Operação Aracnídeo. Ao se inscrever, você concorda em compartilhar avistamentos, análises e evidências com os demais membros do fan clube. Uso indevido resultará em <strong>revogação imediata do acesso</strong>.
+      </p>
+    </div>
+
+    <form id="inscricaoForm" novalidate>
+
+      <!-- DADOS PESSOAIS -->
+      <fieldset>
+        <legend>Dados do Agente</legend>
+        <div class="form-grid">
+
+          <div class="form-group full">
+            <label for="nome">Nome Completo <span class="required">*</span></label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+          </div>
+
+          <div class="form-group">
+            <label>Sexo <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="sexo" value="masculino" required />
+                Masculino
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sexo" value="feminino" />
+                Feminino
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sexo" value="outro" />
+                Outro
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sexo" value="prefiro_nao_dizer" />
+                Prefiro não dizer
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="nascimento">Data de Nascimento <span class="required">*</span></label>
+            <input type="date" id="nascimento" name="nascimento" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone <span class="required">*</span></label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required />
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- PERFIL DE INVESTIGADOR -->
+      <fieldset>
+        <legend>Perfil de Investigador</legend>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="cidade">Cidade de Atuação</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Ex: Nova York, São Paulo..." />
+          </div>
+
+          <div class="form-group">
+            <label for="nivel">Nível de Experiência</label>
+            <select id="nivel" name="nivel">
+              <option value="" disabled selected>— Selecione —</option>
+              <option value="curioso">Curioso (primeiro avistamento)</option>
+              <option value="observador">Observador (2–5 avistamentos)</option>
+              <option value="analista">Analista (6–20 avistamentos)</option>
+              <option value="agente">Agente de Campo (20+ avistamentos)</option>
+              <option value="veteran">Veterano (contribuições documentadas)</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="avistamento">Descreva seu Avistamento mais Memorável</label>
+            <textarea id="avistamento" name="avistamento" placeholder="Onde, quando e o que você viu? Quanto mais detalhes, melhor para a investigação..."></textarea>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <!-- CONFIRMAÇÃO -->
+      <fieldset>
+        <legend>Confirmação</legend>
+
+        <label class="checkbox-wrapper" for="participar">
+          <input type="checkbox" id="participar" name="participar" />
+          <span class="checkbox-text">
+            Desejo participar do fã-clube.
+            <em>Confirmo que li e aceito os termos da Operação Aracnídeo e comprometo-me a compartilhar avistamentos e evidências com a comunidade investigadora.</em>
+          </span>
+        </label>
+
+      </fieldset>
+
+      <div class="sep"></div>
+
+      <!-- BUTTONS -->
+      <div class="btn-group">
+        <button type="reset" class="btn btn-reset" onclick="limparFormulario()">Limpar Formulário</button>
+        <button type="submit" class="btn btn-primary">Enviar Inscrição</button>
+      </div>
+
+    </form>
+
+    <!-- SUCCESS MESSAGE -->
+    <div class="success-msg" id="successMsg">
+      <p>
+        ✓ <strong>INSCRIÇÃO RECEBIDA COM SUCESSO.</strong><br><br>
+        Bem-vindo(a) à Operação Aracnídeo. Suas credenciais de acesso serão enviadas ao e-mail cadastrado em até 48 horas.<br><br>
+        Fique atento(a) às atualizações. A investigação continua.
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>OPERAÇÃO ARACNÍDEO · FAN CLUBE HOMEM-ARANHA · <span>TODOS OS AVISTAMENTOS RESERVADOS</span></p>
+    <p style="margin-top:0.5rem;">SITE ACADÊMICO · PROJETO DE DESENVOLVIMENTO WEB · <span>2025</span></p>
+  </footer>
+
+</body>
+</html>

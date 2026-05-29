@@ -1,0 +1,1012 @@
+/* ================================================
+   OPERAÇÃO ARACNÍDEO — Estilos Unificados
+   Fan Clube do Homem-Aranha
+   ================================================ */
+
+/* --- VARIÁVEIS DE COR --- */
+:root {
+  --vermelho: #cc0000;
+  --vermelho-escuro: #8b0000;
+  --vermelho-brilho: #ff2020;
+  --fundo: #0a0a0a;
+  --fundo-card: #1a1010;
+  --papel: #1c1410;
+  --texto: #e8ddd0;
+  --texto-fraco: #8a7a6a;
+  --amarelo: #f5c842;
+}
+
+/* --- RESET BÁSICO --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- CORPO DA PÁGINA --- */
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: 'Special Elite', cursive;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Gradiente decorativo de fundo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(204,0,0,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(204,0,0,0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- NAVEGAÇÃO --- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 0, 0, 0.95);
+  border-bottom: 2px solid var(--vermelho-escuro);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--vermelho);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.nav-logo span {
+  color: var(--texto);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--vermelho);
+  border-color: var(--vermelho);
+}
+
+/* --- RODAPÉ --- */
+footer {
+  border-top: 2px solid var(--vermelho-escuro);
+  text-align: center;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+footer p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--texto-fraco);
+  letter-spacing: 2px;
+  margin-top: 0.4rem;
+}
+
+footer p span {
+  color: var(--vermelho);
+}
+
+/* --- SEPARADOR --- */
+.sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vermelho-escuro) 20%, var(--vermelho-escuro) 80%, transparent);
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- BOTÕES --- */
+.btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 32px;
+  border: 2px solid;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--vermelho-brilho);
+  border-color: var(--vermelho-brilho);
+  box-shadow: 0 0 24px rgba(204, 0, 0, 0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--texto-fraco);
+  color: var(--texto-fraco);
+}
+
+.btn-outline:hover {
+  border-color: var(--texto);
+  color: var(--texto);
+}
+
+/* --- RÓTULO DE SEÇÃO (pequeno texto em cima do título) --- */
+.section-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* --- TÍTULO DE SEÇÃO --- */
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--texto);
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+.section-title span {
+  color: var(--vermelho);
+}
+
+/* ================================================
+   INDEX.HTML — Página Inicial
+   ================================================ */
+
+/* Teia decorativa no canto da tela */
+.web-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hero — seção principal com título grande */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
+}
+
+/* Ícone de aranha animado */
+.spider-symbol {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 2rem;
+  animation: pulsar 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px var(--vermelho));
+}
+
+@keyframes pulsar {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(0.95); }
+}
+
+/* Etiqueta "Acesso Restrito" */
+.classified-stamp {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 6px;
+  color: var(--vermelho);
+  text-transform: uppercase;
+  border: 1px solid var(--vermelho-escuro);
+  padding: 4px 18px;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  opacity: 0.8;
+}
+
+/* Título principal do hero */
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--texto);
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 em {
+  color: var(--vermelho);
+  font-style: normal;
+  display: block;
+  font-size: 1.15em;
+  text-shadow: 0 0 40px var(--vermelho-escuro);
+}
+
+/* Subtítulo do hero */
+.hero-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--texto-fraco);
+  letter-spacing: 2px;
+  margin: 1.5rem 0 2.5rem;
+  max-width: 480px;
+}
+
+.hero-sub span {
+  color: var(--amarelo);
+}
+
+/* Grupo de botões lado a lado */
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Faixa de notícias rolando */
+.ticker {
+  position: relative;
+  z-index: 1;
+  background: var(--vermelho-escuro);
+  overflow: hidden;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  background: var(--vermelho);
+  color: #fff;
+  padding: 0 14px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ticker-track {
+  display: flex;
+  animation: rolar 28s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-track span {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: #ffd0d0;
+  padding: 0 3rem;
+}
+
+@keyframes rolar {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Seções internas */
+section {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+/* Grid de duas colunas (missão + ficha) */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--texto-fraco);
+  line-height: 1.9;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.about-text p strong {
+  color: var(--texto);
+}
+
+/* Card de ficha do suspeito */
+.file-card {
+  background: var(--papel);
+  border: 1px solid #2a1a1a;
+  border-left: 4px solid var(--vermelho);
+  padding: 1.8rem;
+  position: relative;
+}
+
+.file-card::before {
+  content: 'ARQUIVO Nº 001';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  color: var(--vermelho);
+  background: var(--papel);
+  padding: 0 6px;
+}
+
+.file-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  color: var(--amarelo);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* Linhas dentro do card de ficha */
+.file-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #2a1a1a;
+  padding: 0.5rem 0;
+  font-size: 0.82rem;
+}
+
+.file-row .key {
+  color: var(--texto-fraco);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.file-row .val {
+  color: var(--texto);
+  text-align: right;
+}
+
+.file-row .val.unknown {
+  color: var(--vermelho);
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Grid de 3 colunas para evidências */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Card de evidência */
+.evidence-card {
+  background: var(--fundo-card);
+  border: 1px solid #2a1a1a;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.evidence-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--vermelho);
+  transition: width 0.3s;
+}
+
+.evidence-card:hover {
+  border-color: var(--vermelho-escuro);
+}
+
+.evidence-card:hover::after {
+  width: 100%;
+}
+
+.evidence-num {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--vermelho);
+  letter-spacing: 3px;
+  margin-bottom: 0.8rem;
+}
+
+.evidence-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  color: var(--texto);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
+}
+
+.evidence-card p {
+  font-size: 0.82rem;
+  color: var(--texto-fraco);
+  line-height: 1.7;
+}
+
+/* Bloco de citação */
+.quote-block {
+  background: var(--fundo-card);
+  border-left: 4px solid var(--vermelho);
+  padding: 2rem 2.5rem;
+  margin: 4rem 0;
+}
+
+.quote-block blockquote {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--texto);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.quote-block cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--vermelho);
+  letter-spacing: 3px;
+  font-style: normal;
+}
+
+/* ================================================
+   CONTEUDO.HTML — Arquivos de Campo
+   ================================================ */
+
+/* Cabeçalho interno das páginas secundárias */
+.page-header {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #1a0a0a;
+  padding: 4rem 2rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: var(--vermelho);
+  text-decoration: none;
+}
+
+.page-header h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.page-header h1 span {
+  color: var(--vermelho);
+}
+
+.page-header p {
+  margin-top: 1rem;
+  color: var(--texto-fraco);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  max-width: 580px;
+}
+
+/* Área principal das páginas secundárias */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* Boxes de estatísticas (312 avistamentos, etc.) */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.info-box {
+  background: var(--fundo-card);
+  border: 1px solid #1a0a0a;
+  border-top: 3px solid var(--vermelho);
+  padding: 1.5rem;
+}
+
+.info-box .num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--vermelho);
+  line-height: 1;
+}
+
+.info-box .label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+
+/* Tabela */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table caption {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: var(--texto-fraco);
+  text-align: left;
+  padding: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+thead tr {
+  background: var(--vermelho-escuro);
+}
+
+thead th {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  padding: 14px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid #1e0e0e;
+}
+
+tbody tr:hover {
+  background: var(--fundo-card);
+}
+
+tbody tr:nth-child(even) {
+  background: #0e0808;
+}
+
+tbody td {
+  padding: 12px 16px;
+  color: var(--texto-fraco);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+tbody td:first-child {
+  color: var(--amarelo);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+tbody td strong {
+  color: var(--texto);
+}
+
+/* Badges de status nas tabelas */
+.badge {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border: 1px solid;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-red    { color: var(--vermelho);  border-color: var(--vermelho-escuro); }
+.badge-green  { color: #5c9e5c;          border-color: #2a4a2a; }
+.badge-yellow { color: var(--amarelo);   border-color: #5a4a10; }
+.badge-blue   { color: #4a8acc;          border-color: #1a3a5a; }
+.badge-gray   { color: var(--texto-fraco); border-color: #2a2a2a; }
+
+/* Linha do tempo */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dotted #1e0e0e;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline-year {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--vermelho);
+  text-align: right;
+  padding-top: 2px;
+}
+
+.timeline-content h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--texto);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-content p {
+  font-size: 0.83rem;
+  color: var(--texto-fraco);
+  line-height: 1.7;
+}
+
+/* ================================================
+   INSCRICAO.HTML — Formulário de Inscrição
+   ================================================ */
+
+/* Aviso de segurança no topo */
+.clearance-box {
+  border: 1px solid var(--vermelho-escuro);
+  border-left: 4px solid var(--vermelho);
+  background: var(--fundo-card);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.clearance-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.clearance-box p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: var(--texto-fraco);
+  line-height: 1.7;
+}
+
+.clearance-box p strong {
+  color: var(--vermelho);
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+fieldset {
+  border: 1px solid #2a1a1a;
+  padding: 1.8rem;
+  position: relative;
+}
+
+legend {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  background: var(--fundo);
+  padding: 0 10px;
+  margin-left: -4px;
+}
+
+/* Grade de 2 colunas para os campos */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Campo que ocupa as 2 colunas */
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+}
+
+label .required {
+  color: var(--vermelho);
+  margin-left: 2px;
+}
+
+/* Campos de texto, e-mail, telefone, data e select */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  background: var(--fundo);
+  border: 1px solid #2a1a1a;
+  border-bottom: 2px solid #2a1a1a;
+  color: var(--texto);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  padding: 12px 14px;
+  width: 100%;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--vermelho-escuro);
+  border-bottom-color: var(--vermelho);
+  background: var(--fundo-card);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #3a2a2a;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Grupo de opções de rádio (sexo) */
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--texto-fraco);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.radio-label:hover {
+  color: var(--texto);
+}
+
+/* Botão de rádio customizado */
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #2a1a1a;
+  border-radius: 50%;
+  background: var(--fundo);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--vermelho);
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px; right: 3px; bottom: 3px;
+  background: var(--vermelho);
+  border-radius: 50%;
+}
+
+/* Checkbox com texto ao lado */
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--papel);
+  border: 1px solid #2a1a1a;
+  border-left: 4px solid var(--vermelho-escuro);
+  padding: 1.2rem 1.4rem;
+  cursor: pointer;
+}
+
+.checkbox-wrapper:hover {
+  border-left-color: var(--vermelho);
+}
+
+/* Checkbox customizado */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #2a1a1a;
+  background: var(--fundo);
+  cursor: pointer;
+  position: relative;
+  margin-top: 2px;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.checkbox-text {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.88rem;
+  color: var(--texto);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.checkbox-text em {
+  color: var(--texto-fraco);
+  font-style: normal;
+  font-size: 0.78rem;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Botões do formulário */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.btn-reset {
+  background: transparent;
+  border-color: #2a1a1a;
+  color: var(--texto-fraco);
+}
+
+.btn-reset:hover {
+  border-color: var(--texto-fraco);
+  color: var(--texto);
+}
+
+/* Mensagem de sucesso (aparece após envio) */
+.success-msg {
+  display: none;
+  background: var(--fundo-card);
+  border: 1px solid #1a3a1a;
+  border-left: 4px solid #5c9e5c;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.success-msg.visible {
+  display: block;
+}
+
+.success-msg p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #5c9e5c;
+  line-height: 1.7;
+}
+
+.success-msg p strong {
+  color: var(--texto);
+}

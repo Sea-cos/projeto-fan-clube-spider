@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap">
     <link rel="stylesheet" href="styles.css">
     <title>OP. Aracnideo - Inscrição</title>
 </head>
@@ -14,12 +15,99 @@
     <nav>
         <div class="nav-logo">OP. <span>ARACNÍDEO</span></div>
         <ul>
-            <li><a href="index.html" >Início</a></li>
-            <li><a href="conteudo.html" >Arquivos</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="conteudo.html">Arquivos</a></li>
             <li><a href="inscricao.html" class="active">Inscrição</a></li>
         </ul>
     </nav>
 
+    <div class="page-header">
+        <p class="breadcrumb"><a href="index.html">Início</a> / Inscrição</p>
+        <h1>Junte-se à <br> <span>Operação</span></h1>
+
+        <p>Preencha o formulário de cadastro abaixo para ingressar na Operação Aracnídeo.
+            Todos os dados são mantidos em sigilo e utilizados exclusivamente para coordenar as investigações do fan
+            clube.
+        </p>
+    </div>
+
+
+    <main>
+        <form id="inscricaoForm" novalidate>
+            <fieldset>
+                <legend>Dados do Agente</legend>
+
+                <div class="form-grid">
+
+                    <div class="form-group full">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" name="nome" id="nome" placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sexo</label>
+
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="sexo" value="masculino">
+                                Masculino
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sexo" value="feminino">
+                                Feminino
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sexo" value="outro">
+                                Outro
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sexo" value="nao_dizer">
+                                Prefiro não informar
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nascimento">Data de nascimento</label>
+                        <input type="date" name="nascimento" id="nascimento">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="telefone" placeholder="(XX) XXXXX-XXXX">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Confirmação</legend>
+                <label class="checkbox-wrapper" for="participar">
+                    <input type="checkbox" id="participar" name="participar" />
+                    <span class="checkbox-text">
+                        Desejo participar do fã-clube.
+                        <em>Confirmo que li e aceito os termos da Operação Aracnídeo e comprometo-me a compartilhar
+                            avistamentos e evidências com a comunidade investigadora.</em>
+                    </span>
+                </label>
+            </fieldset>
+
+
+            <div class="btn-group">
+                <button type="reset" class="btn btn-reset" onclick="limparFormulario()">Limpar Formulário</button>
+                <button type="submit" class="btn btn-primary">Enviar Inscrição</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>OPERAÇÃO ARACNÍDEO · FAN CLUBE HOMEM-ARANHA · <span>TODOS OS AVISTAMENTOS RESERVADOS</span></p>
+        <p style="margin-top:0.5rem;">SITE ACADÊMICO · PROJETO DE DESENVOLVIMENTO WEB · Marcos Vinicius
+            <span>2025</span>
+        </p>
+    </footer>
 </body>
 
 </html>

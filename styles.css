@@ -508,3 +508,225 @@ tbody td strong {
     object-fit: cover;
     display: block;
 }
+
+/* ----------------------------------INSCRIÇÃO*/
+/* Estilização do formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+fieldset {
+  border: 1px solid #2a1a1a;
+  padding: 1.8rem;
+  position: relative;
+}
+
+legend {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  background: var(--fundo);
+  padding: 0 10px;
+  margin-left: -4px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+}
+
+/* Estilização inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  background: var(--fundo);
+  border: 1px solid #2a1a1a;
+  border-bottom: 2px solid #2a1a1a;
+  color: var(--texto);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  padding: 12px 14px;
+  width: 100%;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--vermelho-escuro);
+  border-bottom-color: var(--vermelho);
+  background: var(--fundo-card);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #3a2a2a;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--texto-fraco);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.radio-label:hover {
+  color: var(--texto);
+}
+
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #2a1a1a;
+  border-radius: 50%;
+  background: var(--fundo);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--vermelho);
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px; right: 3px; bottom: 3px;
+  background: var(--vermelho);
+  border-radius: 50%;
+}
+
+
+/* Estilização do checkbox de confirmação */
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--papel);
+  border: 1px solid #2a1a1a;
+  border-left: 4px solid var(--vermelho-escuro);
+  padding: 1.2rem 1.4rem;
+  cursor: pointer;
+}
+
+.checkbox-wrapper:hover {
+  border-left-color: var(--vermelho);
+}
+
+/* Checkbox customizado */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #2a1a1a;
+  background: var(--fundo);
+  cursor: pointer;
+  position: relative;
+  margin-top: 2px;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.checkbox-text {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.88rem;
+  color: var(--texto);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.checkbox-text em {
+  color: var(--texto-fraco);
+  font-style: normal;
+  font-size: 0.78rem;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Estilização do botão do form */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.btn-reset {
+  background: transparent;
+  border-color: #2a1a1a;
+  color: var(--texto-fraco);
+}
+
+.btn-reset:hover {
+  border-color: var(--texto-fraco);
+  color: var(--texto);
+}

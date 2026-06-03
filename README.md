@@ -117,58 +117,6 @@ git clone https://github.com/Sea-cos/projeto-fan-clube-spider.git
 
 3. Navegue pelas diferentes seções usando o menu de navegação
 
-## 🔧 Desenvolvendo
-
-### Estrutura de Cores
-As cores estão definidas como variáveis CSS em `:root` no `styles.css`. Para alterar o tema:
-
-```css
-:root {
-  --vermelho: #cc0000;
-  /* Modificar conforme necessário */
-}
-```
-
-### Adicionar Novos Avistamentos
-Para adicionar novos registros na cronologia, adicione uma nova `<tr>` na tabela em `conteudo.html`:
-
-```html
-<tr>
-  <td>Data</td>
-  <td>Local</td>
-  <td><strong>Descrição</strong></td>
-  <td>Duração</td>
-  <td>Dano</td>
-  <td>Fonte</td>
-  <td><span class="badge badge-color">Status</span></td>
-</tr>
-```
-
-## 📊 Estatísticas do Projeto
-
-- **Linguagens**: HTML (57.2%), CSS (42.8%)
-- **Arquivo Principal**: index.html
-- **Tamanho**: ~692 KB
-- **Criado**: 4 dias atrás
-- **Última atualização**: 2026-06-02
-
-## 🚀 Funcionalidades Principais
-
-✅ Navegação sticky com menu responsivo  
-✅ Hero section com CTAs destacadas  
-✅ Tabela interativa de avistamentos  
-✅ Formulário de inscrição funcional  
-✅ Galeria de imagens  
-✅ Sistema de badges para categorização  
-✅ Design temático coeso  
-✅ Acessibilidade semântica  
-
-## 📚 Recursos
-
-- [Google Fonts](https://fonts.google.com/)
-- [Icons8 - Spider-Man Icons](https://icons8.com/)
-- Imagens temáticas de Spider-Man
-
 ## 📝 Notas
 
 Este é um projeto educacional desenvolvido com propósitos acadêmicos. O conteúdo é inspirado no universo do Homem-Aranha e construído com foco em demonstrar habilidades de desenvolvimento web front-end.
